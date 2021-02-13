@@ -1,0 +1,27 @@
+[gd_scene format=2]
+
+[node name="GAME_OVER" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -6.34961
+margin_right = -6.34961
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="game_over" type="Label" parent="CanvasLayer"]
+visible = false
+margin_top = 18.0
+margin_right = 96.0
+margin_bottom = 75.0
+rect_scale = Vector2( 10, 10 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "GAME OVER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

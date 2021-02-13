@@ -1,0 +1,109 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://sprites/bg1.png" type="Texture" id=1]
+[ext_resource path="res://prefabs/hamski_prefab.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/ParallaxAutoScroll.gd" type="Script" id=3]
+[ext_resource path="res://scripts/ParallaxBackgroundAutoScroller.gd" type="Script" id=4]
+[ext_resource path="res://scripts/dirtyParalax.gd" type="Script" id=5]
+[ext_resource path="res://prefabs/tubeDown_prefab.tscn" type="PackedScene" id=6]
+[ext_resource path="res://prefabs/tubeUp_prefab.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/mcpGame.gd" type="Script" id=8]
+[ext_resource path="res://prefabs/GAME_OVER.tscn" type="PackedScene" id=9]
+[ext_resource path="res://sprites/cube_green.png" type="Texture" id=10]
+[ext_resource path="res://sprites/cube_blue.png" type="Texture" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 329.318, 24.7563 )
+
+[node name="mainGame" type="Node2D"]
+
+[node name="mcp" type="Node2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="iParalax" type="Node" parent="."]
+
+[node name="Node2D" type="Node2D" parent="iParalax"]
+position = Vector2( 292.632, 276.349 )
+
+[node name="Sprite" type="Sprite" parent="iParalax/Node2D"]
+z_index = -100
+texture = ExtResource( 1 )
+script = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="iParalax/Node2D"]
+position = Vector2( 800, 0 )
+z_index = -100
+texture = ExtResource( 1 )
+script = ExtResource( 5 )
+
+[node name="Sprite3" type="Sprite" parent="iParalax/Node2D"]
+position = Vector2( 1600, 0 )
+z_index = -100
+texture = ExtResource( 1 )
+script = ExtResource( 5 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_enable = true
+script = ExtResource( 4 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+motion_scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 3 )
+
+[node name="bg1" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+visible = false
+margin_left = -122.0
+margin_top = -19.0
+margin_right = 1048.0
+margin_bottom = 581.0
+texture = ExtResource( 1 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hamski_prefab" parent="." instance=ExtResource( 2 )]
+position = Vector2( 113.164, 277.499 )
+
+[node name="tubeDown_prefab" parent="." instance=ExtResource( 6 )]
+position = Vector2( 489.394, 642.049 )
+
+[node name="tubeUp_prefab" parent="." instance=ExtResource( 7 )]
+position = Vector2( 922.665, -96.5318 )
+
+[node name="tubeUp_prefab3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2100.52, 81.2571 )
+
+[node name="tubeDown_prefab2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1518.03, 613.475 )
+
+[node name="tubeUp_prefab2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1497.3, -96.5318 )
+
+[node name="GAME_OVER" parent="." instance=ExtResource( 9 )]
+
+[node name="green" type="Sprite" parent="."]
+position = Vector2( 946.93, 602.32 )
+scale = Vector2( 11.2844, 2.65413 )
+z_index = -101
+texture = ExtResource( 10 )
+
+[node name="blue" type="Sprite" parent="."]
+position = Vector2( 943.933, 35.9594 )
+scale = Vector2( 11.2844, 2.65413 )
+z_index = -101
+texture = ExtResource( 11 )
+
+[node name="borders" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="borders"]
+position = Vector2( 13.4695, 617.354 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/StaticBody2D2"]
+shape = SubResource( 1 )
