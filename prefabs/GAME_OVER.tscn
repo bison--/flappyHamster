@@ -1,4 +1,8 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/ComigNeue-Regular.tres" type="DynamicFont" id=1]
+
+[sub_resource type="Theme" id=1]
 
 [node name="GAME_OVER" type="Control"]
 anchor_right = 1.0
@@ -13,10 +17,12 @@ __meta__ = {
 
 [node name="game_over" type="Label" parent="CanvasLayer"]
 visible = false
-margin_top = 18.0
-margin_right = 96.0
-margin_bottom = 75.0
-rect_scale = Vector2( 10, 10 )
+margin_right = 1022.0
+margin_bottom = 601.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "GAME OVER"

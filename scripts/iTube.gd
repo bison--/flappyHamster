@@ -1,19 +1,22 @@
 extends Node2D
 
+export(float) var speed = -1.25
+export var posMin = -800.0
+export var posWarpBack = 1600.0
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
+var mcp
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	mcp = get_node("/root/mainGame/mcp")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if position.x <= -800.0:
-		 position.x = 1600.0
-	position.x -= 1.25
-
+	if not mcp.isRunning:
+		return
+		
+	if position.x <= posMin:
+		 position.x = posWarpBack
+		
+	position.x += speed
