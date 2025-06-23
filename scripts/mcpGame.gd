@@ -1,10 +1,18 @@
 extends Node2D
 
+@export
+var scoreLabel: Label
 var isRunning = true
+
+var score: float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+
+func _process(delta: float) -> void:
+	score += delta
+	scoreLabel.text = str(int(score))
 
 func kill():
 	isRunning = false

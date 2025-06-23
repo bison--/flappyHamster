@@ -18,30 +18,32 @@ size = Vector2(658.636, 49.5126)
 
 [node name="mainGame" type="Node2D"]
 
-[node name="mcp" type="Node2D" parent="."]
+[node name="mcp" type="Node2D" parent="." node_paths=PackedStringArray("scoreLabel")]
 script = ExtResource("8")
+scoreLabel = NodePath("../CanvasLayer/HBoxContainer/lblScore")
 
 [node name="iParalax" type="Node" parent="."]
 
 [node name="hills" type="Node2D" parent="iParalax"]
-position = Vector2(292.632, 276.349)
+position = Vector2(296, 272)
 
 [node name="Sprite2D" type="Sprite2D" parent="iParalax/hills"]
 z_index = -100
+position = Vector2(-7, 16)
 texture = ExtResource("1")
 script = ExtResource("5")
 speed = -0.75
 
 [node name="Sprite2" type="Sprite2D" parent="iParalax/hills"]
 z_index = -100
-position = Vector2(800, 0)
+position = Vector2(793, 16)
 texture = ExtResource("1")
 script = ExtResource("5")
 speed = -0.75
 
 [node name="Sprite3" type="Sprite2D" parent="iParalax/hills"]
 z_index = -100
-position = Vector2(1600, 0)
+position = Vector2(1593, 16)
 texture = ExtResource("1")
 script = ExtResource("5")
 speed = -0.75
@@ -204,6 +206,12 @@ position = Vector2(934.419, 19.9051)
 scale = Vector2(11.2844, 2.65413)
 texture = ExtResource("11")
 
+[node name="blue2" type="Sprite2D" parent="background"]
+z_index = -101
+position = Vector2(934, 256)
+scale = Vector2(11.28, 2.65413)
+texture = ExtResource("11")
+
 [node name="GAME_OVER" parent="." instance=ExtResource("9")]
 offset_left = 0.0
 offset_right = 0.0
@@ -212,6 +220,28 @@ grow_vertical = 2
 
 [node name="ccGameOver" parent="GAME_OVER/CanvasLayer" index="0"]
 anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 32.0
+offset_top = 25.0
+offset_right = 164.0
+offset_bottom = 70.0
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.97663, 0.568162, 0.433565, 1)
+theme_override_font_sizes/font_size = 32
+text = "SCORE:"
+
+[node name="lblScore" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.97663, 0.568162, 0.433565, 1)
+theme_override_font_sizes/font_size = 32
+text = "0"
 
 [connection signal="pressed" from="GAME_OVER/CanvasLayer/ccGameOver/VBoxContainer/btnRestart" to="mcp" method="restart"]
 
