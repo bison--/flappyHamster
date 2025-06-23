@@ -1,8 +1,8 @@
-extends Sprite
+extends Sprite2D
 
-export(float) var speed = -1.0
-export var posMin = -800.0
-export var posWarpBack = 1600.0
+@export var speed: float = -1.0
+@export var posMin = -800.0
+@export var posWarpBack = 1600.0
 
 var mcp
 	
@@ -17,6 +17,6 @@ func _process(delta):
 		return
 		
 	if position.x <= posMin:
-		 position.x = posWarpBack
+		position.x = posWarpBack
 		
 	position.x += speed

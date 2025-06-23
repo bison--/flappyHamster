@@ -8,7 +8,7 @@ func _ready():
 
 func kill():
 	isRunning = false
-	var gameOver = get_node("/root/mainGame/GAME_OVER/CanvasLayer/game_over")
+	var gameOver = get_node("/root/mainGame/GAME_OVER/CanvasLayer/ccGameOver")
 	gameOver.visible = true
 	
 func _input(event):
@@ -27,12 +27,12 @@ func restart():
 
 	# Add the next level
 	var next_level_resource = load("res://scenes/mainGame.tscn")
-	var next_level = next_level_resource.instance()
+	var next_level = next_level_resource.instantiate()
 	root.add_child(next_level)
 
 func exit():
 	get_tree().quit()
 	
-func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		get_tree().quit() # default behavior
+#func _notification(what):
+#	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+#		get_tree().quit() # default behavior

@@ -1,33 +1,41 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://ckx7ep15xp2ho"]
 
-[ext_resource path="res://fonts/ComigNeue-Regular.tres" type="DynamicFont" id=1]
+[ext_resource type="FontFile" path="res://fonts/ComigNeue-Regular.tres" id="1"]
 
-[sub_resource type="Theme" id=1]
+[sub_resource type="Theme" id="1"]
 
 [node name="GAME_OVER" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -6.34961
-margin_right = -6.34961
-__meta__ = {
-"_edit_use_anchors_": false
-}
+offset_left = -6.34961
+offset_right = -6.34961
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="game_over" type="Label" parent="CanvasLayer"]
+[node name="ccGameOver" type="CenterContainer" parent="CanvasLayer"]
 visible = false
-margin_right = 1022.0
-margin_bottom = 601.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ccGameOver"]
+layout_mode = 2
+
+[node name="game_over" type="Label" parent="CanvasLayer/ccGameOver/VBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 7
-theme = SubResource( 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+theme = SubResource("1")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 40
 text = "GAME OVER"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnRestart" type="Button" parent="CanvasLayer/ccGameOver/VBoxContainer"]
+layout_mode = 2
+text = "RESTART"

@@ -12,7 +12,9 @@ func _input(event):
 		return
 		
 	if event.is_action_pressed("player_up"):
-		apply_impulse(Vector2(), Vector2(0.0, -50.0))
+		linear_velocity = Vector2.ZERO;
+		angular_velocity = 0;
+		apply_impulse(Vector2(0.0, -500.0))
 		print('BOING!')
 		
 #func _integrate_forces(state):

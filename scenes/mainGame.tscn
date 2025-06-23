@@ -1,210 +1,218 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=14 format=3 uid="uid://cobd86lujpywu"]
 
-[ext_resource path="res://sprites/bg1.png" type="Texture" id=1]
-[ext_resource path="res://prefabs/hamski_prefab.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scripts/ParallaxAutoScroll.gd" type="Script" id=3]
-[ext_resource path="res://scripts/ParallaxBackgroundAutoScroller.gd" type="Script" id=4]
-[ext_resource path="res://scripts/dirtyParalax.gd" type="Script" id=5]
-[ext_resource path="res://prefabs/tubeDown_prefab.tscn" type="PackedScene" id=6]
-[ext_resource path="res://prefabs/tubeUp_prefab.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scripts/mcpGame.gd" type="Script" id=8]
-[ext_resource path="res://prefabs/GAME_OVER.tscn" type="PackedScene" id=9]
-[ext_resource path="res://sprites/cube_brown.png" type="Texture" id=10]
-[ext_resource path="res://sprites/cube_blue.png" type="Texture" id=11]
-[ext_resource path="res://sprites/cloud.png" type="Texture" id=12]
+[ext_resource type="Texture2D" uid="uid://7r4kfdkcvuxt" path="res://sprites/bg1.png" id="1"]
+[ext_resource type="PackedScene" path="res://prefabs/hamski_prefab.tscn" id="2"]
+[ext_resource type="Script" uid="uid://b0wovogxjwci4" path="res://scripts/ParallaxAutoScroll.gd" id="3"]
+[ext_resource type="Script" uid="uid://1t6i2t5prarh" path="res://scripts/ParallaxBackgroundAutoScroller.gd" id="4"]
+[ext_resource type="Script" uid="uid://cn4bfirj3xxik" path="res://scripts/dirtyParalax.gd" id="5"]
+[ext_resource type="PackedScene" path="res://prefabs/tubeDown_prefab.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://prefabs/tubeUp_prefab.tscn" id="7"]
+[ext_resource type="Script" uid="uid://b7b0i7scqtjom" path="res://scripts/mcpGame.gd" id="8"]
+[ext_resource type="PackedScene" uid="uid://ckx7ep15xp2ho" path="res://prefabs/GAME_OVER.tscn" id="9"]
+[ext_resource type="Texture2D" uid="uid://bp4hd3t6hv8i" path="res://sprites/cube_brown.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://cijaaytd0rmpb" path="res://sprites/cube_blue.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://c0pqq6tpotenf" path="res://sprites/cloud.png" id="12"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 329.318, 24.7563 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(658.636, 49.5126)
 
 [node name="mainGame" type="Node2D"]
 
 [node name="mcp" type="Node2D" parent="."]
-script = ExtResource( 8 )
+script = ExtResource("8")
 
 [node name="iParalax" type="Node" parent="."]
 
 [node name="hills" type="Node2D" parent="iParalax"]
-position = Vector2( 292.632, 276.349 )
+position = Vector2(292.632, 276.349)
 
-[node name="Sprite" type="Sprite" parent="iParalax/hills"]
+[node name="Sprite2D" type="Sprite2D" parent="iParalax/hills"]
 z_index = -100
-texture = ExtResource( 1 )
-script = ExtResource( 5 )
+texture = ExtResource("1")
+script = ExtResource("5")
 speed = -0.75
 
-[node name="Sprite2" type="Sprite" parent="iParalax/hills"]
-position = Vector2( 800, 0 )
+[node name="Sprite2" type="Sprite2D" parent="iParalax/hills"]
 z_index = -100
-texture = ExtResource( 1 )
-script = ExtResource( 5 )
+position = Vector2(800, 0)
+texture = ExtResource("1")
+script = ExtResource("5")
 speed = -0.75
 
-[node name="Sprite3" type="Sprite" parent="iParalax/hills"]
-position = Vector2( 1600, 0 )
+[node name="Sprite3" type="Sprite2D" parent="iParalax/hills"]
 z_index = -100
-texture = ExtResource( 1 )
-script = ExtResource( 5 )
+position = Vector2(1600, 0)
+texture = ExtResource("1")
+script = ExtResource("5")
 speed = -0.75
 
 [node name="clouds" type="Node" parent="iParalax"]
 
-[node name="cloud" type="Sprite" parent="iParalax/clouds"]
-position = Vector2( -51.8785, -60.7239 )
-scale = Vector2( 0.326932, 0.326932 )
+[node name="cloud" type="Sprite2D" parent="iParalax/clouds"]
 z_index = -99
-texture = ExtResource( 12 )
-script = ExtResource( 5 )
+position = Vector2(-51.8785, -60.7239)
+scale = Vector2(0.326932, 0.326932)
+texture = ExtResource("12")
+script = ExtResource("5")
 
-[node name="cloud2" type="Sprite" parent="iParalax/clouds"]
-position = Vector2( 180.017, -69.0483 )
-scale = Vector2( 0.326932, 0.326932 )
+[node name="cloud2" type="Sprite2D" parent="iParalax/clouds"]
 z_index = -99
-texture = ExtResource( 12 )
-script = ExtResource( 5 )
+position = Vector2(180.017, -69.0483)
+scale = Vector2(0.326932, 0.326932)
+texture = ExtResource("12")
+script = ExtResource("5")
 
-[node name="cloud3" type="Sprite" parent="iParalax/clouds"]
-position = Vector2( 400.615, -55.9671 )
-scale = Vector2( 0.326932, 0.326932 )
+[node name="cloud3" type="Sprite2D" parent="iParalax/clouds"]
 z_index = -99
-texture = ExtResource( 12 )
-script = ExtResource( 5 )
+position = Vector2(400.615, -55.9671)
+scale = Vector2(0.326932, 0.326932)
+texture = ExtResource("12")
+script = ExtResource("5")
 
-[node name="cloud4" type="Sprite" parent="iParalax/clouds"]
-position = Vector2( 595.453, -63.9023 )
-scale = Vector2( 0.326932, 0.326932 )
+[node name="cloud4" type="Sprite2D" parent="iParalax/clouds"]
 z_index = -99
-texture = ExtResource( 12 )
-script = ExtResource( 5 )
+position = Vector2(595.453, -63.9023)
+scale = Vector2(0.326932, 0.326932)
+texture = ExtResource("12")
+script = ExtResource("5")
 
-[node name="cloud5" type="Sprite" parent="iParalax/clouds"]
-position = Vector2( 802.049, -46.9509 )
-scale = Vector2( 0.326932, 0.326932 )
+[node name="cloud5" type="Sprite2D" parent="iParalax/clouds"]
 z_index = -99
-texture = ExtResource( 12 )
-script = ExtResource( 5 )
+position = Vector2(802.049, -46.9509)
+scale = Vector2(0.326932, 0.326932)
+texture = ExtResource("12")
+script = ExtResource("5")
 
-[node name="cloud6" type="Sprite" parent="iParalax/clouds"]
-position = Vector2( 1009.79, -58.8597 )
-scale = Vector2( 0.326932, 0.326932 )
+[node name="cloud6" type="Sprite2D" parent="iParalax/clouds"]
 z_index = -99
-texture = ExtResource( 12 )
-script = ExtResource( 5 )
+position = Vector2(1009.79, -58.8597)
+scale = Vector2(0.326932, 0.326932)
+texture = ExtResource("12")
+script = ExtResource("5")
 
-[node name="cloud7" type="Sprite" parent="iParalax/clouds"]
-position = Vector2( 1185.57, -73.4375 )
-scale = Vector2( 0.326932, 0.326932 )
+[node name="cloud7" type="Sprite2D" parent="iParalax/clouds"]
 z_index = -99
-texture = ExtResource( 12 )
-script = ExtResource( 5 )
+position = Vector2(1185.57, -73.4375)
+scale = Vector2(0.326932, 0.326932)
+texture = ExtResource("12")
+script = ExtResource("5")
 
-[node name="cloud8" type="Sprite" parent="iParalax/clouds"]
-position = Vector2( 1370.12, -56.7239 )
-scale = Vector2( 0.326932, 0.326932 )
+[node name="cloud8" type="Sprite2D" parent="iParalax/clouds"]
 z_index = -99
-texture = ExtResource( 12 )
-script = ExtResource( 5 )
+position = Vector2(1370.12, -56.7239)
+scale = Vector2(0.326932, 0.326932)
+texture = ExtResource("12")
+script = ExtResource("5")
 
-[node name="cloud9" type="Sprite" parent="iParalax/clouds"]
-position = Vector2( 1574.47, -74.866 )
-scale = Vector2( 0.326932, 0.326932 )
+[node name="cloud9" type="Sprite2D" parent="iParalax/clouds"]
 z_index = -99
-texture = ExtResource( 12 )
-script = ExtResource( 5 )
+position = Vector2(1574.47, -74.866)
+scale = Vector2(0.326932, 0.326932)
+texture = ExtResource("12")
+script = ExtResource("5")
 
-[node name="cloud10" type="Sprite" parent="iParalax/clouds"]
-position = Vector2( 1769.63, -69.2092 )
-scale = Vector2( 0.326932, 0.326932 )
+[node name="cloud10" type="Sprite2D" parent="iParalax/clouds"]
 z_index = -99
-texture = ExtResource( 12 )
-script = ExtResource( 5 )
+position = Vector2(1769.63, -69.2092)
+scale = Vector2(0.326932, 0.326932)
+texture = ExtResource("12")
+script = ExtResource("5")
 
-[node name="cloud11" type="Sprite" parent="iParalax/clouds"]
-position = Vector2( 1956.3, -89.0081 )
-scale = Vector2( 0.326932, 0.326932 )
+[node name="cloud11" type="Sprite2D" parent="iParalax/clouds"]
 z_index = -99
-texture = ExtResource( 12 )
-script = ExtResource( 5 )
+position = Vector2(1956.3, -89.0081)
+scale = Vector2(0.326932, 0.326932)
+texture = ExtResource("12")
+script = ExtResource("5")
 
-[node name="cloud12" type="Sprite" parent="iParalax/clouds"]
-position = Vector2( 2176.92, -74.866 )
-scale = Vector2( 0.326932, 0.326932 )
+[node name="cloud12" type="Sprite2D" parent="iParalax/clouds"]
 z_index = -99
-texture = ExtResource( 12 )
-script = ExtResource( 5 )
+position = Vector2(2176.92, -74.866)
+scale = Vector2(0.326932, 0.326932)
+texture = ExtResource("12")
+script = ExtResource("5")
 
-[node name="cloud13" type="Sprite" parent="iParalax/clouds"]
-position = Vector2( 2363.6, -86.1797 )
-scale = Vector2( 0.326932, 0.326932 )
+[node name="cloud13" type="Sprite2D" parent="iParalax/clouds"]
 z_index = -99
-texture = ExtResource( 12 )
-script = ExtResource( 5 )
+position = Vector2(2363.6, -86.1797)
+scale = Vector2(0.326932, 0.326932)
+texture = ExtResource("12")
+script = ExtResource("5")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-follow_viewport_enable = true
-script = ExtResource( 4 )
+follow_viewport_enabled = true
+script = ExtResource("4")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 visible = false
-motion_scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 3 )
+motion_scale = Vector2(0.5, 0.5)
+script = ExtResource("3")
 
 [node name="bg1" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
 visible = false
-margin_left = -122.0
-margin_top = -19.0
-margin_right = 1048.0
-margin_bottom = 581.0
-texture = ExtResource( 1 )
+offset_left = -122.0
+offset_top = -19.0
+offset_right = 1048.0
+offset_bottom = 581.0
+texture = ExtResource("1")
 stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="hamski_prefab" parent="." instance=ExtResource( 2 )]
-position = Vector2( 113.164, 277.499 )
+[node name="hamski_prefab" parent="." instance=ExtResource("2")]
+position = Vector2(113.164, 277.499)
 
 [node name="tubes" type="Node" parent="."]
 
-[node name="tubeDown_prefab" parent="tubes" instance=ExtResource( 6 )]
-position = Vector2( 489.394, 642.049 )
+[node name="tubeDown_prefab" parent="tubes" instance=ExtResource("6")]
+position = Vector2(489.394, 642.049)
 
-[node name="tubeUp_prefab" parent="tubes" instance=ExtResource( 7 )]
-position = Vector2( 920.665, -44.5318 )
+[node name="tubeUp_prefab" parent="tubes" instance=ExtResource("7")]
+position = Vector2(920.665, -44.5318)
 
-[node name="tubeUp_prefab3" parent="tubes" instance=ExtResource( 7 )]
-position = Vector2( 2100.52, 81.2571 )
+[node name="tubeUp_prefab3" parent="tubes" instance=ExtResource("7")]
+position = Vector2(2100.52, 81.2571)
 
-[node name="tubeDown_prefab2" parent="tubes" instance=ExtResource( 6 )]
-position = Vector2( 1518.03, 613.475 )
+[node name="tubeDown_prefab2" parent="tubes" instance=ExtResource("6")]
+position = Vector2(1518.03, 613.475)
 
-[node name="tubeUp_prefab2" parent="tubes" instance=ExtResource( 7 )]
-position = Vector2( 1497.3, -96.5318 )
+[node name="tubeUp_prefab2" parent="tubes" instance=ExtResource("7")]
+position = Vector2(1497.3, -96.5318)
 
 [node name="borders" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="borders"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="borders/StaticBody2D"]
-shape = SubResource( 1 )
+shape = SubResource("1")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="borders"]
-position = Vector2( 13.4695, 617.354 )
+position = Vector2(13.4695, 617.354)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="borders/StaticBody2D2"]
-shape = SubResource( 1 )
+shape = SubResource("1")
 
 [node name="background" type="Node" parent="."]
 
-[node name="brown" type="Sprite" parent="background"]
-position = Vector2( 946.93, 602.32 )
-scale = Vector2( 11.2844, 2.65413 )
+[node name="brown" type="Sprite2D" parent="background"]
 z_index = -101
-texture = ExtResource( 10 )
+position = Vector2(946.93, 602.32)
+scale = Vector2(11.2844, 2.65413)
+texture = ExtResource("10")
 
-[node name="blue" type="Sprite" parent="background"]
-position = Vector2( 934.419, 19.9051 )
-scale = Vector2( 11.2844, 2.65413 )
+[node name="blue" type="Sprite2D" parent="background"]
 z_index = -101
-texture = ExtResource( 11 )
+position = Vector2(934.419, 19.9051)
+scale = Vector2(11.2844, 2.65413)
+texture = ExtResource("11")
 
-[node name="GAME_OVER" parent="." instance=ExtResource( 9 )]
+[node name="GAME_OVER" parent="." instance=ExtResource("9")]
+offset_left = 0.0
+offset_right = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ccGameOver" parent="GAME_OVER/CanvasLayer" index="0"]
+anchors_preset = 15
+
+[connection signal="pressed" from="GAME_OVER/CanvasLayer/ccGameOver/VBoxContainer/btnRestart" to="mcp" method="restart"]
+
+[editable path="GAME_OVER"]

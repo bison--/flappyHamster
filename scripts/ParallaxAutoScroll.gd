@@ -1,6 +1,6 @@
 extends ParallaxLayer
 
-export var offset_x = 1
+@export var offset_x = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
